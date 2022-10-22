@@ -2,6 +2,7 @@ import * as React from 'react'
 import Box from '@mui/material/Box'
 import { Typography } from '@mui/material'
 import { Group } from './Group'
+import {LogIn} from "./LogIn";
 
 export const LandingPage = () => {
 
@@ -16,6 +17,7 @@ export const LandingPage = () => {
             <Box>
                 <Group></Group>
             </Box>
+            <LogIn></LogIn>
         </Box>
     )
 }
