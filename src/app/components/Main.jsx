@@ -1,7 +1,9 @@
-import React from 'react';
+import * as React from 'react';
+import Box from '@mui/material/Box'
+import { LandingPage } from './LandingPage';
 
 export const Main = () => (
-    <div>
-        Testing
-    </div>
+    <Box>
+        <LandingPage/>
+    </Box>
 )
