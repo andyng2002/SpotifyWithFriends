@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from "axios";
+import Button from '@mui/material/Button';
 
 export const LogIn = () => {
 
@@ -20,6 +21,19 @@ export const LogIn = () => {
     }
 
     return (
-        <button onClick={logIn}>Log In</button>
-    );
+        <Button
+        onClick={logIn}
+        variant='contained' 
+        sx={{ 
+            backgroundColor:'#1DB954',
+            border:'1px white solid',
+            width:'300px',
+            height:'60px',
+            fontWeight: 'bold',
+            fontSize:20
+            }}>
+            Login with Spotify
+        </Button>
+    )
+    
 }
