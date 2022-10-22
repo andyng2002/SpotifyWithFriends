@@ -1,5 +1,6 @@
 //const express = require('express');
 import express from "express";
+import cors from "cors";
 const router = express.Router();
 const app = express();
 const port = process.env.port || 8888;
@@ -13,15 +14,15 @@ var spotifyApi = new SpotifyWebApi({
     redirectUri: 'http%3A%2F%2Flocalhost%3A8080%2F' // set later
 });
 
+app.use(cors())
+
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);
 });
 
-router.get('/clicked', (req, res) => {
+app.get('/clicked', cors(), (req, res) => {
     var html = spotifyApi.createAuthorizeURL(scopes) + "&show_dialog=true"
-    console.log(html)
-    //res.send("<a href='" + html + "'> Sign In </a>")
-    res.redirect(html);
+    res.send(html);
 });
 
 app.use(router);
