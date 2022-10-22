@@ -24,7 +24,7 @@ router.get('/clicked', (req, res) => {
     res.redirect(html);
 });
 
-app.use(router);
+//app.use(router);
 
 //module.exports = router;
 
