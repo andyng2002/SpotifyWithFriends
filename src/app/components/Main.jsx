@@ -1,7 +1,15 @@
 import React from 'react';
+import { LogIn } from './LogIn';
 
-export const Main = () => (
-    <div>
-        Testing
-    </div>
-)
+export const Main = () => {
+
+
+    return (
+        <div>
+            <LogIn></LogIn>
+        </div>
+    )
+
+}
+
+
