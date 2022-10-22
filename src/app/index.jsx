@@ -1,8 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom'; outdated
+import { createRoot } from 'react-dom/client';
 import { Main } from './components/Main';
 
-ReactDOM.render(
+const container = document.getElementById("app");
+const root = createRoot(container);
+
+root.render(
     <Main/>,
-    document.getElementById("app")
 );
