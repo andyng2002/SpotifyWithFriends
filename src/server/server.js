@@ -4,6 +4,19 @@ import cors from "cors";
 const router = express.Router();
 const app = express();
 const port = process.env.port || 8888;
+const mongoose = require("mongoose")
+const uri = "mongodb+srv://kaaat:TO137mvUujxmpttl@cluster0.alisctt.mongodb.net/?retryWrites=true&w=majority"
+
+async function connect() {
+    try {
+        await mongoose.connect(uri)
+        console.log("Connected to MongoDB")
+    } catch (error) {
+        console.error(error)
+    }
+}
+
+connect();
 
 var SpotifyWebApi = require('spotify-web-api-node');
 let scopes = ['playlist-modify-private', 'playlist-modify-public', 'user-top-read', 'user-read-email', 'ugc-image-upload'];
