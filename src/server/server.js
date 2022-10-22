@@ -3,7 +3,7 @@ import express from "express";
 import cors from "cors";
 const router = express.Router();
 const app = express();
-const port = 8888;
+const port = process.env.port || 8888;
 
 var SpotifyWebApi = require('spotify-web-api-node');
 let scopes = ['playlist-modify-private', 'playlist-modify-public', 'user-top-read', 'user-read-email', 'ugc-image-upload'];
@@ -17,7 +17,7 @@ var spotifyApi = new SpotifyWebApi({
 app.use(cors())
 
 app.listen(port, () => {
-    console.log("App is listening");
+    console.log(`Listening on port ${port}`);
 });
 
 app.get('/clicked', cors(), (req, res) => {

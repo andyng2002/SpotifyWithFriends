@@ -19,7 +19,6 @@ export const LogIn = () => {
         axios.get("http://localhost:8888/clicked").then(data=>{window.location.replace(data.data)}).catch(error=>console.log(error));
     }
 
-
     return (
         <button onClick={logIn}>Log In</button>
     );
