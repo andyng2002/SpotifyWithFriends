@@ -3,6 +3,7 @@ import Box from '@mui/material/Box'
 import { Typography } from '@mui/material'
 import { Group } from './Group'
 import { LoginButton } from './LoginButton'
+import {LogIn} from "./LogIn";
 
 export const LandingPage = () => {
 
@@ -17,9 +18,7 @@ export const LandingPage = () => {
             <Box>
                 <Group></Group>
             </Box>
-            <Box>
-                <LoginButton></LoginButton>
-            </Box>
+            <LogIn></LogIn>
         </Box>
     )
 }
