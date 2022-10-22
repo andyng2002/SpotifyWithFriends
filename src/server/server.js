@@ -13,6 +13,8 @@ var spotifyApi = new SpotifyWebApi({
     redirectUri: 'http%3A%2F%2Flocalhost%3A8080%2F' // set later
 });
 
+app.use()
+
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);
 });
@@ -24,7 +26,7 @@ router.get('/clicked', (req, res) => {
     res.redirect(html);
 });
 
-app.use(router);
+//app.use(router);
 
 //module.exports = router;
 

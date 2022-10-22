@@ -13,6 +13,7 @@ export const LandingPage = () => {
             </Typography>
             <Group></Group>
             <Group></Group>
+            <Button></Button>
             <Box>
                 <Group></Group>
             </Box>
