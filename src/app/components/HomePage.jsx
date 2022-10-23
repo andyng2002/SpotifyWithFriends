@@ -8,11 +8,6 @@ import axios from "axios";
 
 export const HomePage = () => {
 
-    const topArtists = () => {
-        axios.get("http://localhost:8888/access").then(response => {
-            console.log(response.data)
-        })
-    }
     return (
         <Box>
             {/* <Box>
@@ -21,9 +16,7 @@ export const HomePage = () => {
             <Box>
                 <Group img={profile} name={"Aiden's Group"} members={'aiden anh andy tyler kenys'}></Group>
             </Box>
-            <Box>
-                <Button onClick={topArtists}>artists</Button>
-            </Box>
+            
          </Box>
     )
 }

@@ -99,18 +99,25 @@ app.get("/authorization", cors(), async (req, res) => {
     res.redirect("http://localhost:8080/home");
 })
 
-app.get("/access", cors(), async (req, res) => {
-    const code = req.query.code
-    console.log(code)
-    spotifyApi.getMyTopArtists(spotifyApi.getAccessToken()).then(
-        function(data) {
-            console.log(data.body)
-        },
-        function(err) {
-            console.error(err)
-        }
-    )
-})
+// app.get("/getArtists", cors(), (req, res) => {
+//     spotifyApi.getMyTopArtists().then((data) => {
+//         let topArtists = data.body.items;
+//         console.log(topArtists);
+//     }), (err) => {
+//         console.log("NOOOOOOOO", err)
+//     }
+// })
+
+const getArtists = () => {
+    spotifyApi.getMyTopArtists().then((data)=>{
+        console.log("Top Artists: " + JSON.stringify(data.body));
+        console.log(data.body.items)
+    }), (err) => {
+        console.log("User data no bueno");
+    }
+}
+
+// getArtists()
 
 app.listen(port, () => {
     console.log("App is listening");

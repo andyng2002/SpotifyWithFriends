@@ -20,13 +20,13 @@ export const NavBar = () => {
 
     return (
         <div>
-            <Navbar bg='light' variant='dark' style={{display:"inline"}}>
+            <Navbar fixed='top' bg='light' variant='dark' style={{display:"inline"}}>
                 <Container>
                         <Box
                             display='flex'
                             backgroundColor='pink'
                             flex='1'
-                            height='8%'
+                            height='8 %'
                             flexDirection='row'
                             sx={{ justifyContent: 'space-evenly' }}>
                             <Nav className="me-auto flex-column" style={{display: "contents"}}>
