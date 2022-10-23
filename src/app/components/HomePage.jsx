@@ -21,6 +21,9 @@ export const HomePage = () => {
             <Box>
                 <Group img={profile} name={"Aiden's Group"} members={'aiden anh andy tyler kenys'}></Group>
             </Box>
-        </Box>
+            <Box>
+                <Button onClick={topArtists}>artists</Button>
+            </Box>
+         </Box>
     )
 }

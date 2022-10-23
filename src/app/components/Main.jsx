@@ -21,14 +21,6 @@ function Main() {
                 <Route path = "/yourdata" element = {<YourDataPage />} />
             </Routes>
             </Router>
-            {/* <Router>
-                <NavBar></NavBar>
-                <Routes>
-                    <Route exact path="/" element = {<LandingPage />} />
-                    <Route path = "/home" element = {<HomePage />} />
-                    <Route path = "/yourdata" element = {<YourDataPage />} />
-                </Routes>
-            </Router> */}
         </>
     );
 }
