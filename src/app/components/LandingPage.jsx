@@ -2,7 +2,6 @@ import * as React from 'react'
 import Box from '@mui/material/Box'
 import { Typography } from '@mui/material'
 import {LogIn} from "./LogIn";
-import { GetCode } from './test/GetCode';
 
 export const LandingPage = () => {
 
