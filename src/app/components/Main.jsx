@@ -5,7 +5,7 @@ import { LandingPage } from './LandingPage';
 import { HomePage } from './HomePage';
 import { Link, Route, Routes } from "react-router-dom"
 //import { Router, Route } from 'react-router-dom';
-
+import { Group } from './Group';
 
 function Main() {
     return(
