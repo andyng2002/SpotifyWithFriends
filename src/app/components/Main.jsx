@@ -16,7 +16,6 @@ function Main() {
             </Routes>
             <NavBar></NavBar>
             <Routes>
-                <Route exact path="/" element = {<LandingPage />} />
                 <Route path = "/home" element = {<HomePage />} />
                 <Route path = "/yourdata" element = {<YourDataPage />} />
             </Routes>
@@ -25,4 +24,3 @@ function Main() {
 }
 
 export default Main
-
