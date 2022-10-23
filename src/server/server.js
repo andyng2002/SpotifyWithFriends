@@ -61,6 +61,19 @@ app.get('/clicked', cors(), (req, res) => {
     res.send(html);
 });
 
+const getUserData = () => {
+    spotifyApi.getMe().then((data)=>{
+        console.log("Authorized used data: " + JSON.stringify(data.body));
+        email = data.body.email;
+        name = data.body.display_name;
+        console.log("Email is " + email);
+        console.log("Name is " + name);
+
+    }), (err) => {
+        console.log("User data no bueno");
+    }
+}
+
 app.get("/authorization", cors(), async (req, res) => {
     const code = req.query.code;
     console.log(code);
@@ -74,6 +87,8 @@ app.get("/authorization", cors(), async (req, res) => {
             // Set the access token on the API object to use it in later calls
             spotifyApi.setAccessToken(data.body['access_token']);
             spotifyApi.setRefreshToken(data.body['refresh_token']);
+
+            getUserData();
         },
         function(err) {
             console.log('Something went wrong!', err);
@@ -93,19 +108,6 @@ app.get("/access", cors(), async (req, res) => {
             console.error(err)
         }
     )
-})
-
-app.get("/getUserData", cors(), (req,res)=>{
-    spotifyApi.getMe().then((data)=>{
-        console.log("Authorized used data: " + JSON.stringify(data.body));
-        email = data.body.email;
-        name = data.body.display_name;
-        console.log("Email is " + email);
-        console.log("Name is " + name);
-
-    }), (err) => {
-        console.log("User data no bueno");
-    }
 })
 
 app.listen(port, () => {
