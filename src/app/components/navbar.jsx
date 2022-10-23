@@ -4,6 +4,7 @@ import {
     Nav,
     Container,
 } from "react-bootstrap";
+import axios from "axios";
 import Box from '@mui/material/Box'
 import { Typography } from '@mui/material'
 
@@ -11,6 +12,10 @@ export const NavBar = () => {
     // const [show, setShow] = useState(false);
     // const handleClose = () => setShow(false);
     // const handleShow = () => setShow(true);
+
+    const addGroup = () => {
+        axios.get("http://localhost:8888/creategroup");
+    }
 
     return (
         <div>
@@ -28,7 +33,7 @@ export const NavBar = () => {
                                 <h2>home</h2>
                             </Nav.Link>
                             
-                            <Nav.Link to="/yourdata">
+                            <Nav.Link to="/yourdata" onClick={addGroup}>
                                 <h2>your data</h2>
                             </Nav.Link>
 
