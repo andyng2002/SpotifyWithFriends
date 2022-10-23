@@ -1,10 +1,7 @@
 import * as React from 'react'
 import Box from '@mui/material/Box'
 import { Typography } from '@mui/material'
-import { Group } from './Group'
-import { LoginButton } from './LoginButton'
 import {LogIn} from "./LogIn";
-import { borders } from '@mui/system';
 
 export const LandingPage = () => {
 
@@ -52,7 +49,7 @@ export const LandingPage = () => {
                         <Typography
                             textAlign='center'
                             sx={{ 
-                                fontFamily:'Helvetica',
+                                fontFamily:'Prompt,serif',
                                 fontSize:35,
                                 color:'white',
                             }}
@@ -65,7 +62,7 @@ export const LandingPage = () => {
                   display='flex'
                   alignItems='center'
                   justifyContent='center'
-                  height='100%'
+                  height='60%'
                 >
                     <LogIn></LogIn>
                 </Box>

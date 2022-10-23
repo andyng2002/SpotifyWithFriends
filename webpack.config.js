@@ -18,8 +18,13 @@ module.exports = {
     module: {
         rules:[{
             test: /\.jsx?/,
-            loader: 'babel-loader'
-        }]
+            loader: 'babel-loader',
+        },
+        { test: /\.css$/, use: 'css-loader' },
+        { test: /\.ts$/, use: 'ts-loader' },
+        { test: /\.png$/, use: 'file-loader' },
+        ]
+        
     },
     plugins: [new HtmlWebpackPlugin({
         template: './index.html'
