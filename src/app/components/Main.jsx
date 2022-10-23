@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Group } from './Group';
 import { NavBar } from './Navbar';
 import { YourDataPage } from './YourDataPage';
+import { NotFoundPage } from './NotFoundPage';
 
 function Main() {
     return(
@@ -19,6 +20,7 @@ function Main() {
             <Routes>
                 <Route path = "/home" element = {<HomePage />} />
                 <Route path = "/yourdata" element = {<YourDataPage />} />
+                <Route path = "*" element = {<NotFoundPage />} />
             </Routes>
             </Router>
             {/* <Router>
