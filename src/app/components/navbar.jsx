@@ -2,10 +2,6 @@ import React, { useState } from "react";
 import {
     Navbar,
     Nav,
-    Button,
-    Offcanas,
-    OffcanvasBody,
-    OffcanvasHeader,
     Container,
 } from "react-bootstrap";
 import Box from '@mui/material/Box'
@@ -32,7 +28,7 @@ export const NavBar = () => {
                                 <h2>home</h2>
                             </Nav.Link>
                             
-                            <Nav.Link to="/group">
+                            <Nav.Link to="/yourdata">
                                 <h2>your data</h2>
                             </Nav.Link>
 
