@@ -10,19 +10,9 @@ import { Group } from './Group';
 function Main() {
     return(
         <>
-            <nav>
-                <ul>
-                    <li>
-                        <Link to="/">LandingPage</Link>
-                    </li>
-                    <li>
-                        <Link to="/home">HomePage</Link>
-                    </li>
-                </ul>
-            </nav>
             <Routes>
-                <Route exact path="/" element = {<HomePage />} />
-                <Route path = "/home" element = {<LandingPage />} />
+                <Route exact path="/" element = {<LandingPage />} />
+                <Route path = "/home" element = {<HomePage />} />
             </Routes>
         </>
     );
