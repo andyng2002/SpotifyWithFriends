@@ -48,7 +48,7 @@ export const LandingPage = () => {
                     >
                         <Typography
                             textAlign='center'
-                            sx={{ 
+                            sx={{                                
                                 fontFamily:'Prompt,serif',
                                 fontSize:35,
                                 color:'white',
