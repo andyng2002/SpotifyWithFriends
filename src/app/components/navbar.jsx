@@ -20,7 +20,7 @@ export const NavBar = () => {
                             display='flex'
                             backgroundColor='pink'
                             flex='1'
-                            height='10%'
+                            height='6%'
                             flexDirection='row'
                             sx={{ justifyContent: 'space-evenly' }}>
 

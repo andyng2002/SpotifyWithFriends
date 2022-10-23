@@ -5,7 +5,7 @@ import { LandingPage } from './LandingPage';
 import { HomePage } from './HomePage';
 import { Router, Route, Routes } from "react-router-dom"
 import { Group } from './Group';
-import { NavBar } from './navbar';
+import { NavBar } from './Navbar';
 import { YourDataPage } from './YourDataPage';
 
 function Main() {
