@@ -4,6 +4,7 @@ import {
     Nav,
     Container,
 } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
 import Box from '@mui/material/Box'
 import { Typography } from '@mui/material'
 
@@ -23,18 +24,25 @@ export const NavBar = () => {
                             height='5%'
                             flexDirection='row'
                             sx={{ justifyContent: 'space-evenly' }}>
+                            <Nav className="me-auto flex-column">
+                                <LinkContainer to="/home">
+                                    <Nav.Link >
+                                        <h2>home</h2>
+                                    </Nav.Link>
+                                </LinkContainer>
+                                
+                                <LinkContainer to="/yourdata">
+                                    <Nav.Link >
+                                        <h2>your data</h2>
+                                    </Nav.Link>
+                                </LinkContainer>
 
-                            <Nav.Link to="/home">
-                                <h2>home</h2>
-                            </Nav.Link>
-                            
-                            <Nav.Link to="/yourdata">
-                                <h2>your data</h2>
-                            </Nav.Link>
-
-                            <Nav.Link to="/log-out">
-                                <h2>log out</h2>
-                            </Nav.Link>
+                                <LinkContainer to="/log-out">
+                                    <Nav.Link >
+                                        <h2>log out</h2>
+                                    </Nav.Link>
+                                </LinkContainer>
+                            </Nav>
                         </Box>
                 </Container>
             </Navbar>

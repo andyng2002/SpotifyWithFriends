@@ -69,7 +69,20 @@ app.get("/access", cors(), async (req, res) => {
             console.log('Something went wrong!', err);
         }
     );
-    res.redirect("http://localhost:8080/#/home");
+    res.redirect("http://localhost:8080/home");
+})
+
+app.get("/access", cors(), async (req, res) => {
+    const code = req.query.code
+    console.log(code)
+    spotifyApi.getMyTopArtists(spotifyApi.getAccessToken()).then(
+        function(data) {
+            console.log(data.body)
+        },
+        function(err) {
+            console.error(err)
+        }
+    )
 })
 
 app.listen(port, () => {
