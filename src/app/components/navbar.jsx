@@ -26,10 +26,10 @@ export const NavBar = () => {
                             display='flex'
                             backgroundColor='pink'
                             flex='1'
-                            height='5%'
+                            height='8%'
                             flexDirection='row'
                             sx={{ justifyContent: 'space-evenly' }}>
-                            <Nav className="me-auto flex-column">
+                            <Nav className="me-auto flex-column" style={{display: "contents"}}>
                                 <LinkContainer to="/home">
                                     <Nav.Link >
                                         <h2>home</h2>
