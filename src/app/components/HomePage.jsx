@@ -1,11 +1,13 @@
 import React from 'react';
 import { Group } from './Group';
+import profile from './profile.png';
+import Box from '@mui/material/Box'
 
 export const HomePage = () => {
-    console.log("asd")
+    
     return(
-        <div>
-            <Group value="id1"></Group>
-        </div>
+        <Box>
+            <Group value={profile}></Group>
+        </Box>
     )
 }
