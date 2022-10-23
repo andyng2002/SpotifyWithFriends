@@ -1,30 +1,39 @@
 import React from 'react';
 import axios from "axios";
+import Button from '@mui/material/Button';
 
 export const LogIn = () => {
-    /*let logIn = () => {
-        fetch('http://localhost:8888/clicked',{method:"GET"})
-            .then((response)=> {
-                if (response.ok) {
-                    console.log("Success");
-                }
-            })
-            .catch((error)=>{
-                console.log(error);
-            })
-    };*/
 
-    let logIn = () => {
+    /*let logIn = () => {
         fetch("http://localhost:8888/clicked",{
             method: "GET",
             mode: "cors",
-            headers: {
-                Authorization: `Bearer: ${"Tyler"}`,
-            }
         })
+    } */
+
+    /*const getAuthURL = () => {
+        axios.get("http://localhost:8888/clicked").then(data=> {console.log(data.data)}).catch(error=>console.log(error));
+    }
+    getAuthURL();*/
+
+    const logIn = () => {
+        axios.get("http://localhost:8888/clicked").then(data=>{window.location.replace(data.data)}).catch(error=>console.log(error));
     }
 
     return (
-        <button onClick={logIn}>Log In</button>
-    );
+        <Button
+        onClick={logIn}
+        variant='contained' 
+        sx={{ 
+            backgroundColor:'#1DB954',
+            border:'1px white solid',
+            width:'300px',
+            height:'60px',
+            fontWeight: 'bold',
+            fontSize:20
+            }}>
+            Login with Spotify
+        </Button>
+    )
+    
 }
