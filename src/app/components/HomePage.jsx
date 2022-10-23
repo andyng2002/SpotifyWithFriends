@@ -7,7 +7,7 @@ export const HomePage = () => {
     
     return(
         <Box>
-            <Group value={profile}></Group>
+            <Group img={profile} name = {"test"}></Group>
         </Box>
     )
 }

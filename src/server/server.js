@@ -8,7 +8,6 @@ import bodyParser from "body-parser";
 import {request} from "request";
 
 const app = express();
-const port = 8888;
 const redirectUri = "http://localhost:8888/access"
 
 const port = process.env.port || 8888;
@@ -94,7 +93,7 @@ app.get("/access", cors(), async (req, res) => {
         }
     );
 
-    res.redirect("http://localhost:8080");
+    res.redirect("http://localhost:8080/#/home");
     /*console.log(code);
     spotifyApi.authorizationCodeGrant(code).then(
         function(data) {
