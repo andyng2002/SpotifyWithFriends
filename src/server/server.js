@@ -10,28 +10,36 @@ const User = require("./User")
 const mongoose = require("mongoose")
 
 const app = express();
-const redirectUri = "http://localhost:8888/access"
+const redirectUri = "http://localhost:8888/authorization"
 const port = process.env.port || 8888;
-const uri = "mongodb+srv://kaaat:TO137mvUujxmpttl@cluster0.alisctt.mongodb.net/?retryWrites=true&w=majority"
+const uri = "mongodb+srv://kaaat:TO137mvUujxmpttl@cluster0.alisctt.mongodb.net/?retryWrites=true&w=majority";
+let name = "";
+let email = "";
+
+let connected = false;
 
 async function connect() {
     try {
-        await mongoose.connect(uri)
+        await mongoose.connect(uri);
+        connected = true;
         console.log("Connected to MongoDB")
     } catch (error) {
         console.error(error)
     }
 }
 
-async function run() {
+async function testSave() {
     //const user = await User.create({email: "example@gmail.com" })
     const user = new User({email:"example@gmail.com", group:"example!"})
+    await user.save((err)=>{
+        if (err) console.log(err);
+    });
     console.log("RUN IS COMPLETED")
     console.log(user)
 }
 
-connect();
-run()
+connect()
+testSave()
 
 var SpotifyWebApi = require('spotify-web-api-node');
 let scopes = ['playlist-modify-private', 'playlist-modify-public', 'user-top-read', 'user-read-email', 'ugc-image-upload'];
@@ -39,7 +47,7 @@ let scopes = ['playlist-modify-private', 'playlist-modify-public', 'user-top-rea
 var spotifyApi = new SpotifyWebApi({
     clientId: 'e2d4a4b1eedf493f86413b3a31892213',
     clientSecret: '5344d40306da4d828c551eacd9bb2ad0',
-    redirectUri: 'http://localhost:8888/access' // encoded url
+    redirectUri: 'http://localhost:8888/authorization' // encoded url
 });
 
 app.use(
@@ -53,7 +61,7 @@ app.get('/clicked', cors(), (req, res) => {
     res.send(html);
 });
 
-app.get("/access", cors(), async (req, res) => {
+app.get("/authorization", cors(), async (req, res) => {
     const code = req.query.code;
     console.log(code);
 
@@ -71,7 +79,33 @@ app.get("/access", cors(), async (req, res) => {
             console.log('Something went wrong!', err);
         }
     );
-    res.redirect("http://localhost:8080/#/home");
+    res.redirect("http://localhost:8080/home");
+})
+
+app.get("/access", cors(), async (req, res) => {
+    const code = req.query.code
+    console.log(code)
+    spotifyApi.getMyTopArtists(spotifyApi.getAccessToken()).then(
+        function(data) {
+            console.log(data.body)
+        },
+        function(err) {
+            console.error(err)
+        }
+    )
+})
+
+app.get("/getUserData", cors(), (req,res)=>{
+    spotifyApi.getMe().then((data)=>{
+        console.log("Authorized used data: " + JSON.stringify(data.body));
+        email = data.body.email;
+        name = data.body.display_name;
+        console.log("Email is " + email);
+        console.log("Name is " + name);
+
+    }), (err) => {
+        console.log("User data no bueno");
+    }
 })
 
 app.listen(port, () => {
