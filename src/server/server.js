@@ -6,13 +6,13 @@ import queryString from "query-string";
 import {authorizationCodeGrant} from "spotify-web-api-node/src/server-methods";
 import bodyParser from "body-parser";
 import {request} from "request";
+const User = require("./User")
+const mongoose = require("mongoose")
 
 const app = express();
 const redirectUri = "http://localhost:8888/access"
 const port = process.env.port || 8888;
-const mongoose = require("mongoose")
 const uri = "mongodb+srv://kaaat:TO137mvUujxmpttl@cluster0.alisctt.mongodb.net/?retryWrites=true&w=majority"
-const User = require("./User")
 
 async function connect() {
     try {
@@ -23,13 +23,15 @@ async function connect() {
     }
 }
 
-connect();
-run()
-
 async function run() {
-    const user = await User.create({email: "example@gmail.com" })
+    //const user = await User.create({email: "example@gmail.com" })
+    const user = new User({email:"example@gmail.com", group:"example!"})
+    console.log("RUN IS COMPLETED")
     console.log(user)
 }
+
+connect();
+run()
 
 var SpotifyWebApi = require('spotify-web-api-node');
 let scopes = ['playlist-modify-private', 'playlist-modify-public', 'user-top-read', 'user-read-email', 'ugc-image-upload'];
