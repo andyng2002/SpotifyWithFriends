@@ -6,6 +6,7 @@ const app = express();
 const port = process.env.port || 8888;
 const mongoose = require("mongoose")
 const uri = "mongodb+srv://kaaat:TO137mvUujxmpttl@cluster0.alisctt.mongodb.net/?retryWrites=true&w=majority"
+const User = require("./User")
 
 async function connect() {
     try {
@@ -17,6 +18,12 @@ async function connect() {
 }
 
 connect();
+
+run()
+async function run() {
+    const user = await User.create({email: "example@gmail.com" })
+    console.log(user)
+}
 
 var SpotifyWebApi = require('spotify-web-api-node');
 let scopes = ['playlist-modify-private', 'playlist-modify-public', 'user-top-read', 'user-read-email', 'ugc-image-upload'];
