@@ -1,9 +1,9 @@
 const mongoose = require("mongoose")
+const groupSchema = require("./Group")
 
 const userSchema = new mongoose.Schema({
     email: String,
-    group: String
-    //group: mongoose.SchemaTypes.ObjectId
+    group: groupSchema
     // topSongs: [String],
     // topArtists: [String],
     // picture: any

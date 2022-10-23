@@ -9,15 +9,18 @@ import axios from "axios";
 export const HomePage = () => {
 
     const topArtists = () => {
-        axios.get("http://localhost:8888/access").then(response => {console.log(response.data)})
+        axios.get("http://localhost:8888/access").then(response => {
+            console.log(response.data)
+        })
     }
-    return(
+    return (
         <Box>
             {/* <Box>
                 <AddGroup/>
             </Box> */}
             <Box>
-                <Group img={profile} name = {"Aiden's Group"} members={'aiden anh andy tyler kenys'}></Group>
+                <Group img={profile} name={"Aiden's Group"} members={'aiden anh andy tyler kenys'}></Group>
             </Box>
-         </Box>
+        </Box>
     )
+}

@@ -6,8 +6,9 @@ import queryString from "query-string";
 import {authorizationCodeGrant} from "spotify-web-api-node/src/server-methods";
 import bodyParser from "body-parser";
 import {request} from "request";
-const User = require("./User")
 const mongoose = require("mongoose")
+const User = require("./User")
+const Group = mongoose.model("Group", require("./Group"));
 
 const app = express();
 const redirectUri = "http://localhost:8888/authorization"
@@ -30,7 +31,8 @@ async function connect() {
 
 async function testSave() {
     //const user = await User.create({email: "example@gmail.com" })
-    const user = new User({email:"example@gmail.com", group:"example!"})
+    const group = new Group({groupName:"exampleGroup",groupMembers:["Andy","Aiden","Keny", "Anh"]});
+    const user = new User({email:"example@gmail.com", group: group});
     await user.save((err)=>{
         if (err) console.log(err);
     });

@@ -18,7 +18,7 @@ export const Group = (props) => {
             margin='5px'
             >
                 <Typography fontSize='30px'>{props.name}</Typography>
-                <Typography fontsize='10px'>{props.members}</Typography>
+                <Typography fontSize='10px'>{props.members}</Typography>
             </Box>
         </Box>
     )
