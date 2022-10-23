@@ -5,7 +5,9 @@ import { Typography } from '@mui/material'
 export const GroupPage = () => {
   return (
     <Box>
-        
+        <Typography>
+          grouppage
+        </Typography>
     </Box>
   )
 }
