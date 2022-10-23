@@ -3,7 +3,7 @@ import React from 'react';
 //import Box from '@mui/material/Box';
 import { LandingPage } from './LandingPage';
 import { HomePage } from './HomePage';
-import { Router, Route, Routes } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Group } from './Group';
 import { NavBar } from './Navbar';
 import { YourDataPage } from './YourDataPage';
@@ -11,6 +11,7 @@ import { YourDataPage } from './YourDataPage';
 function Main() {
     return(
         <>
+            <Router>
             <Routes>
                 <Route exact path="/" element = {<LandingPage />} />
             </Routes>
@@ -19,6 +20,15 @@ function Main() {
                 <Route path = "/home" element = {<HomePage />} />
                 <Route path = "/yourdata" element = {<YourDataPage />} />
             </Routes>
+            </Router>
+            {/* <Router>
+                <NavBar></NavBar>
+                <Routes>
+                    <Route exact path="/" element = {<LandingPage />} />
+                    <Route path = "/home" element = {<HomePage />} />
+                    <Route path = "/yourdata" element = {<YourDataPage />} />
+                </Routes>
+            </Router> */}
         </>
     );
 }
