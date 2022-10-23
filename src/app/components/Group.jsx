@@ -4,14 +4,15 @@ import { Typography } from '@mui/material'
 import PropTypes from 'prop-types'
 import profile from './profile.png';
 
-export const Group = ({ title, pic, members }) => {
+export const Group = (props) => {
 
+    let dad = props.value;
 
     return (
         <Box>
-            <Box>
-                <img src={pic} alt='profile' />
-            </Box>
+            <Typography>
+                {dad}
+            </Typography>
         </Box>
     )
 }
